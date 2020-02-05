@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import WebKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var htmlload: WKWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let htmlPath = Bundle.main.path(forResource: "index", ofType: "html");
+        let url = URL(fileURLWithPath: htmlPath!);
+        let request  = URLRequest(url: url);
+        htmlload.load(request);
     }
 
 
