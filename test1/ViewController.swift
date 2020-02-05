@@ -15,12 +15,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let htmlPath = Bundle.main.path(forResource: "index", ofType: "html");
-        let url = URL(fileURLWithPath: htmlPath!);
-        let request  = URLRequest(url: url);
-        htmlload.load(request);
+//        let htmlPath = Bundle.main.path(forResource: "index", ofType: "html");
+//        let url = URL(fileURLWithPath: htmlPath!);
+//        let request  = URLRequest(url: url);
+//        htmlload.load(request);
+        
+        
+        let htmlPath = Bundle.main.path(forResource: "build/index", ofType: "html")
+        let htmlUrl = URL(fileURLWithPath: htmlPath!, isDirectory: false)
+        htmlload.loadFileURL(htmlUrl, allowingReadAccessTo: htmlUrl)
+        
+        
     }
 
+ 
 
 }
 

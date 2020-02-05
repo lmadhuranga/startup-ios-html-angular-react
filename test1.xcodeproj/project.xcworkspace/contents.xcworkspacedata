@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../../ngtemp1/dist">
+   </FileRef>
+   <FileRef
       location = "self:test1.xcodeproj">
    </FileRef>
 </Workspace>
