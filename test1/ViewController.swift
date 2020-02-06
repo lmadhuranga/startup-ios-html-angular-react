@@ -14,11 +14,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var htmlload: WKWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        let htmlPath = Bundle.main.path(forResource: "index", ofType: "html");
-        let url = URL(fileURLWithPath: htmlPath!);
-        let request  = URLRequest(url: url);
-        htmlload.load(request);
+        
+        // if want  load html folder
+//        let htmlPath = Bundle.main.path(forResource: "www/index", ofType: "html")
+//        let htmlUrl = URL(fileURLWithPath: htmlPath!, isDirectory: false)
+//        webView.loadFileURL(htmlUrl, allowingReadAccessTo: htmlUrl)
+                
+        // if loading url
+        let myURL = URL(string:"http://apple.com")
+        let myRequest = URLRequest(url: myURL!)
+        htmlload.load(myRequest)
     }
 
 
